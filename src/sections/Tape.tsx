@@ -22,7 +22,7 @@ export const TapeSection = () => {
           <div className="flex flex-none">
             {words.map((word) => (
               <div key={word} className="inline-flex items-center ">
-                <span className="bg-gradient-to-r from-yellow-300 to-orange-600  text-center bg-clip-text text-transparent px-8 ">
+                <span className="bg-gradient-to-r from-stone-300 to-stone-600  text-center bg-clip-text text-transparent px-8 ">
                   {word}
                 </span>
                 <StarIcon className="size-3 text-white/50" />
