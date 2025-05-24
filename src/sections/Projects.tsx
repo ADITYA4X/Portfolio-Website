@@ -6,7 +6,7 @@ import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
-import {Card} from "@/components/Card";
+import { Card } from "@/components/Card";
 
 const portfolioProjects = [
   {
@@ -69,7 +69,6 @@ export const ProjectsSection = () => {
               key={project.title}
               className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20"
             >
-
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
                   <div className="bg-gradient-to-r from-yellow-300 to-orange-600 inline-flex gap-2 font-bold uppercase tracking-widest text-transparent bg-clip-text">
