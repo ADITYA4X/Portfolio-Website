@@ -240,34 +240,19 @@ export const AboutSection = () => {
           </Card>
 
           <Card>
-            <div>
-              <StarIcon />
-              <h3>My Toolbox</h3>
-
-              <p>
-                Explore the technologies and tools I use to craft the beautiful
-                application
-              </p>
-            </div>
-            <div>
-              {toolboxItems.map((item) => (
-                <div key={item.title} className="">
-                  <TechIcon component={item.iconType} />
-                  <span className="text-sm font-medium">{item.title}</span>
-                </div>
-              ))}
-            </div>
+            <CardHeader
+              title="My Toolbox"
+              description="Explore the technologies and tools I use to craft the beautiful
+              application"
+            />
           </Card>
 
           <Card>
-            <div>
-              <StarIcon />
-              <h3>Other Projects</h3>
-              <p>
-                I have worked on various projects, including a few that are not
-                listed in the Projects section. Here are some of them:
-              </p>
-            </div>
+            <CardHeader
+              title="Other Projects"
+              description="Here are some of the projects I have worked on that are not listed in the Projects section."
+            />
+
             <div>
               {projects.map((project) => (
                 <a
