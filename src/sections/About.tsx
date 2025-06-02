@@ -18,6 +18,7 @@ import mapImage from "@/assets/images/map.png";
 import Image from "next/image";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/CardHeader";
+import { ToolboxItems } from "@/components/ToolboxItems";
 
 const qualificationData = [
   {
@@ -166,11 +167,11 @@ export const AboutSection = () => {
           title="A Glimpse Into My World"
           description="Explore the heart of my work—what I’m passionate about, and the vision that fuels me."
         />
-        <div className="mt-20">
-          <Card className="h-[420px]">
+        <div className="mt-20 flex flex-col gap-8">
+          <Card className="md:h-[320px] h-[420px]">
             <CardHeader
               title="Academic & Professional Highlights"
-              description="Explore my academic milestones and certifications that shaped my skills and knowledge."
+              description=" "
             />
             <div className="flex flex-col mt-6">
               {/* Tab Triggers */}
@@ -194,7 +195,7 @@ export const AboutSection = () => {
 
               {/* Tab Content */}
 
-              <div className="flex flex-col gap-y-2 mt-4 overflow-auto max-h-[200px]">
+              <div className="flex flex-col gap-y-2 mt-4 overflow-auto max-h-[200px] pb-4">
                 {activeTab === "Education"
                   ? activeData?.data.map((item, index) => {
                       const { degree, institution } = item;
@@ -239,11 +240,18 @@ export const AboutSection = () => {
             </div>
           </Card>
 
-          <Card>
+          <Card className="h-[320px] p-0">
             <CardHeader
               title="My Toolbox"
               description="Explore the technologies and tools I use to craft the beautiful
               application"
+              className="px-6 pt-6"
+            />
+            <ToolboxItems items={toolboxItems} className="mt-6" />
+            <ToolboxItems
+              items={toolboxItems}
+              className="mt-6"
+              itemsWrapperClassName="-translate-x-1/2"
             />
           </Card>
 
