@@ -110,42 +110,58 @@ const projects = [
   {
     title: "Portfolio-Website",
     emoji: "👨‍💻",
+    left: "5%",
+    top: "5%",
     link: "https://github.com/ADITYA4X/Portfolio-Website",
   },
   {
     title: "the-medium-blog",
     emoji: "📑",
+    left: "40%",
+    top: "5%",
     link: "https://github.com/ADITYA4X/MERN-PROJECT",
   },
   {
     title: "The Natours",
     emoji: "🌍",
+    left: "10%",
+    top: "35%",
     link: "https://github.com/ADITYA4X/the-natours-project",
   },
   {
     title: "Fast-React-Pizza-Co",
     emoji: "🍕",
+    left: "35%",
+    top: "40%",
     link: "https://example.com/project2",
   },
 
   {
     title: "Omnifood",
     emoji: "🍽️",
+    left: "70%",
+    top: "45%",
     link: "https://omnifood-adityak.netlify.app/",
   },
   {
     title: "Forkify",
     emoji: "🍽️",
+    left: "5%",
+    top: "65%",
     link: "https://forkify-adityakunghadkar.netlify.app/",
   },
   {
     title: "Drag-Drop",
     emoji: "📌",
+    left: "35%",
+    top: "70%",
     link: "https://github.com/ADITYA4X/Drag-Drop",
   },
   {
     title: "worldwise",
     emoji: "🌍",
+    left: "65%",
+    top: "75%",
     link: "https://github.com/ADITYA4X/React-Projects/tree/master/worldwise",
   },
 ];
@@ -255,21 +271,28 @@ export const AboutSection = () => {
             />
           </Card>
 
-          <Card>
+          <Card className="h-[320px] p-0 flex flex-col">
             <CardHeader
               title="Other Projects"
               description="Here are some of the projects I have worked on that are not listed in the Projects section."
+              className="px-6 py-6"
             />
 
-            <div>
+            <div className="relative flex-1">
               {projects.map((project) => (
                 <a
                   key={project.title}
                   href={project.link}
-                  className="flex items-center gap-2"
+                  className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-orange-600/70 to-yellow-400/70 text-white rounded-full py-1.5 absolute"
+                  style={{
+                    left: project.left,
+                    top: project.top,
+                  }}
                 >
-                  <span className="text-lg">{project.emoji}</span>
-                  <span>{project.title}</span>
+                  <span>{project.emoji}</span>
+                  <span className="font-medium text-stone-950">
+                    {project.title}
+                  </span>
                 </a>
               ))}
             </div>
