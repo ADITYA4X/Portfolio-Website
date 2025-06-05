@@ -184,92 +184,94 @@ export const AboutSection = () => {
           description="Explore the heart of my work—what I’m passionate about, and the vision that fuels me."
         />
         <div className="mt-20 flex flex-col gap-8">
-          <Card className="md:h-[320px] h-[420px]">
-            <CardHeader
-              title="Academic & Professional Highlights"
-              description=" "
-            />
-            <div className="flex flex-col mt-6">
-              {/* Tab Triggers */}
-              <div className="flex justify-center items-center ">
-                <div className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
-                  {["Education", "Certification"].map((tab) => (
-                    <button
-                      key={tab}
-                      onClick={() => setActiveTab(tab)}
-                      className={`px-4 py-1.5 text-sm rounded-full transition-all duration-300 nav-item ${
-                        activeTab === tab
-                          ? "bg-white text-zinc-900 hover:bg-white/80"
-                          : "text-white/80 hover:text-white"
-                      }`}
-                    >
-                      {tab}
-                    </button>
-                  ))}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-6 md:gap-6">
+            <Card className="md:h-[320px] h-[420px] md:col-span-3">
+              <CardHeader
+                title="Academic & Professional Highlights"
+                description=" "
+              />
+              <div className="flex flex-col md:mt-0">
+                {/* Tab Triggers */}
+                <div className="flex justify-center items-center ">
+                  <div className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
+                    {["Education", "Certification"].map((tab) => (
+                      <button
+                        key={tab}
+                        onClick={() => setActiveTab(tab)}
+                        className={`px-4 py-1.5 text-sm rounded-full transition-all duration-300 nav-item ${
+                          activeTab === tab
+                            ? "bg-white text-zinc-900 hover:bg-white/80"
+                            : "text-white/80 hover:text-white"
+                        }`}
+                      >
+                        {tab}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Tab Content */}
+
+                <div className="flex flex-col gap-y-2 mt-4 overflow-y-auto md:max-h-[100px] max-h-[195px] pb-4">
+                  {activeTab === "Education"
+                    ? activeData?.data.map((item, index) => {
+                        const { degree, institution } = item;
+                        return (
+                          <div className="flex gap-x-6 group" key={index}>
+                            <div className="h-[64px] w-[1px] bg-border relative ml-2 mt-2">
+                              <div className="w-[11px] h-[11px] rounded-full bg-orange-600 absolute -left-[5px] md:group-hover:translate-y-[34px] group-hover:translate-y-[64px] transition-all duration-500"></div>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-md mb-2 text-white/80">
+                                {degree},
+                              </div>
+                              <div className="text-sm font-normal mb-4 text-white/60">
+                                {institution}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })
+                    : activeData?.data.map((item, index) => {
+                        const { course, platform } = item;
+                        return (
+                          <div className="flex gap-x-6 group" key={index}>
+                            <div className="h-[54px] w-[1px] bg-border relative ml-2 mt-2">
+                              <div className="w-[11px] h-[11px] rounded-full bg-orange-600 absolute -left-[5px] md:group-hover:translate-y-[44px] group-hover:translate-y-[54px] transition-all duration-500"></div>
+                            </div>
+                            <div>
+                              <div
+                                className="font-semibold text-md mb-2 text-white/80
+                "
+                              >
+                                {course},
+                              </div>
+                              <div className="text-sm font-medium mb-4 text-white/60">
+                                {platform}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
                 </div>
               </div>
+            </Card>
 
-              {/* Tab Content */}
-
-              <div className="flex flex-col gap-y-2 mt-4 overflow-auto max-h-[200px] pb-4">
-                {activeTab === "Education"
-                  ? activeData?.data.map((item, index) => {
-                      const { degree, institution } = item;
-                      return (
-                        <div className="flex gap-x-6 group" key={index}>
-                          <div className="h-[64px] w-[1px] bg-border relative ml-2 mt-2">
-                            <div className="w-[11px] h-[11px] rounded-full bg-orange-600 absolute -left-[5px] md:group-hover:translate-y-[34px] group-hover:translate-y-[64px] transition-all duration-500"></div>
-                          </div>
-                          <div>
-                            <div className="font-semibold text-md mb-2 text-white/80">
-                              {degree},
-                            </div>
-                            <div className="text-sm font-normal mb-4 text-white/60">
-                              {institution}
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })
-                  : activeData?.data.map((item, index) => {
-                      const { course, platform } = item;
-                      return (
-                        <div className="flex gap-x-6 group" key={index}>
-                          <div className="h-[54px] w-[1px] bg-border relative ml-2 mt-2">
-                            <div className="w-[11px] h-[11px] rounded-full bg-orange-600 absolute -left-[5px] md:group-hover:translate-y-[44px] group-hover:translate-y-[54px] transition-all duration-500"></div>
-                          </div>
-                          <div>
-                            <div
-                              className="font-semibold text-md mb-2 text-white/80
-                "
-                            >
-                              {course},
-                            </div>
-                            <div className="text-sm font-medium mb-4 text-white/60">
-                              {platform}
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-              </div>
-            </div>
-          </Card>
-
-          <Card className="h-[320px] p-0">
-            <CardHeader
-              title="My Toolbox"
-              description="Explore the technologies and tools I use to craft the beautiful
+            <Card className="h-[320px]  md:col-span-3">
+              <CardHeader
+                title="My Toolbox"
+                description="Explore the technologies and tools I use to craft the beautiful
               application"
-              className="px-6 pt-6"
-            />
-            <ToolboxItems items={toolboxItems} className="mt-6" />
-            <ToolboxItems
-              items={toolboxItems}
-              className="mt-6"
-              itemsWrapperClassName="-translate-x-1/2"
-            />
-          </Card>
+                className=""
+              />
+              <ToolboxItems items={toolboxItems} className="" />
+              <ToolboxItems
+                items={toolboxItems}
+                className="mt-6"
+                itemsWrapperClassName="-translate-x-1/2"
+              />
+            </Card>
+          </div>
 
           <Card className="h-[320px] p-0 flex flex-col">
             <CardHeader
