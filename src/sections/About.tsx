@@ -176,7 +176,7 @@ export const AboutSection = () => {
   const activeData = getData(qualificationData, activeTab);
 
   return (
-    <div className="py-20">
+    <div className="py-20 lg:py-28">
       <div className="container">
         <SectionHeader
           eyebrow="About Me"
@@ -184,15 +184,15 @@ export const AboutSection = () => {
           description="Explore the heart of my work—what I’m passionate about, and the vision that fuels me."
         />
         <div className="mt-20 flex flex-col gap-8">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-6 md:gap-6">
-            <Card className="md:h-[320px] h-[420px] md:col-span-3">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-7 md:gap-6 lg:grid-cols-7">
+            <Card className="md:h-[380px] h-[420px] md:col-span-4 lg:col-span-4">
               <CardHeader
                 title="Academic & Professional Highlights"
-                description=" "
+                description=""
               />
               <div className="flex flex-col md:mt-0">
                 {/* Tab Triggers */}
-                <div className="flex justify-center items-center ">
+                <div className="flex justify-center items-center -mt-4 ">
                   <div className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
                     {["Education", "Certification"].map((tab) => (
                       <button
@@ -212,13 +212,13 @@ export const AboutSection = () => {
 
                 {/* Tab Content */}
 
-                <div className="flex flex-col gap-y-2 mt-4 overflow-y-auto md:max-h-[100px] max-h-[195px] pb-4">
+                <div className="flex flex-col gap-y-2 mt-6 overflow-y-auto md:max-h-[240px] max-h-[195px] pb-4 pl-1">
                   {activeTab === "Education"
                     ? activeData?.data.map((item, index) => {
                         const { degree, institution } = item;
                         return (
-                          <div className="flex gap-x-6 group" key={index}>
-                            <div className="h-[64px] w-[1px] bg-border relative ml-2 mt-2">
+                          <div className="flex gap-x-6 group " key={index}>
+                            <div className="h-[64px] w-[1px] bg-border relative ml-2 mt-2 mb-2">
                               <div className="w-[11px] h-[11px] rounded-full bg-orange-600 absolute -left-[5px] md:group-hover:translate-y-[34px] group-hover:translate-y-[64px] transition-all duration-500"></div>
                             </div>
                             <div>
@@ -235,7 +235,7 @@ export const AboutSection = () => {
                     : activeData?.data.map((item, index) => {
                         const { course, platform } = item;
                         return (
-                          <div className="flex gap-x-6 group" key={index}>
+                          <div className="flex gap-x-6 group mb-5" key={index}>
                             <div className="h-[54px] w-[1px] bg-border relative ml-2 mt-2">
                               <div className="w-[11px] h-[11px] rounded-full bg-orange-600 absolute -left-[5px] md:group-hover:translate-y-[44px] group-hover:translate-y-[54px] transition-all duration-500"></div>
                             </div>
@@ -257,7 +257,7 @@ export const AboutSection = () => {
               </div>
             </Card>
 
-            <Card className="h-[320px]  md:col-span-3">
+            <Card className="md:h-[380px] h-[420px] md:col-span-3 lg:col-span-3 ">
               <CardHeader
                 title="My Toolbox"
                 description="Explore the technologies and tools I use to craft the beautiful
@@ -267,49 +267,60 @@ export const AboutSection = () => {
               <ToolboxItems items={toolboxItems} className="" />
               <ToolboxItems
                 items={toolboxItems}
-                className="mt-6"
+                className="mt-3"
                 itemsWrapperClassName="-translate-x-1/2"
+              />
+              <ToolboxItems
+                items={toolboxItems}
+                className="mt-3"
+                itemsWrapperClassName="-translate-x-1/4"
               />
             </Card>
           </div>
 
-          <Card className="h-[320px] p-0 flex flex-col">
-            <CardHeader
-              title="Other Projects"
-              description="Here are some of the projects I have worked on that are not listed in the Projects section."
-              className="px-6 py-6"
-            />
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-6 md:gap-6 lg:grid-cols-7">
+            <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-3">
+              <Image
+                src={mapImage}
+                alt="map"
+                className="h-full w-full object-cover "
+              />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full bg-gradient-to-r from-yellow-400/70 to-orange-600/70 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-900/30">
+                <Image
+                  src={smileMemoji}
+                  alt="Smile Memoji"
+                  className="size-20"
+                />
+              </div>
+            </Card>
 
-            <div className="relative flex-1">
-              {projects.map((project) => (
-                <a
-                  key={project.title}
-                  href={project.link}
-                  className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-yellow-400/70 to-orange-600/70 text-white rounded-full py-1.5 absolute"
-                  style={{
-                    left: project.left,
-                    top: project.top,
-                  }}
-                >
-                  <span>{project.emoji}</span>
-                  <span className="font-medium text-stone-950">
-                    {project.title}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </Card>
+            <Card className="h-[320px] p-0 flex flex-col md:col-span-4 lg:col-span-4">
+              <CardHeader
+                title="Other Projects"
+                description="Here are some of the projects I have worked on that are not listed in the Projects section."
+                className="px-6 py-6"
+              />
 
-          <Card className="h-[320px] p-0 relative">
-            <Image
-              src={mapImage}
-              alt="map"
-              className="h-full w-full object-cover "
-            />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full bg-gradient-to-r from-yellow-400/70 to-orange-600/70 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-900/30">
-              <Image src={smileMemoji} alt="Smile Memoji" className="size-20" />
-            </div>
-          </Card>
+              <div className="relative flex-1">
+                {projects.map((project) => (
+                  <a
+                    key={project.title}
+                    href={project.link}
+                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-yellow-400/70 to-orange-600/70 text-white rounded-full py-1.5 absolute"
+                    style={{
+                      left: project.left,
+                      top: project.top,
+                    }}
+                  >
+                    <span>{project.emoji}</span>
+                    <span className="font-medium text-stone-950">
+                      {project.title}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
