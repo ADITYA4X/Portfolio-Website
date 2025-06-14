@@ -18,35 +18,46 @@ export const HeroSection = () => {
         <div className="size-[820px] hero-ring"></div>
         <div className="size-[1020px] hero-ring"></div>
         <div className="size-[1220px] hero-ring"></div>
-        <HeroOrbit size={770} rotation={-72}>
-          <StarIcon className="size-20 text-orange-700" />
-        </HeroOrbit>
-        <HeroOrbit size={550} rotation={20}>
-          <StarIcon className="size-12 text-orange-800" />
-        </HeroOrbit>
-        <HeroOrbit size={590} rotation={98}>
-          <StarIcon className="size-8 text-orange-700" />
-        </HeroOrbit>
-        <HeroOrbit size={430} rotation={-15}>
+
+        {/* shouldOrbit?: boolean;
+  orbitDuration?: string;
+  shouldSpin?: boolean;
+  spinDuration?: string; */}
+
+        <HeroOrbit size={430} rotation={-14}>
           <SparkleIcon className="size-8 text-orange-300/20" />
         </HeroOrbit>
+
         <HeroOrbit size={440} rotation={79}>
           <SparkleIcon className="size-5 text-orange-300/20" />
         </HeroOrbit>
+
         <HeroOrbit size={530} rotation={178}>
           <SparkleIcon className="size-10 text-orange-300/20" />
         </HeroOrbit>
+
+        <HeroOrbit size={550} rotation={20}>
+          <StarIcon className="size-12 text-orange-800" />
+        </HeroOrbit>
+
+        <HeroOrbit size={590} rotation={98}>
+          <StarIcon className="size-8 text-orange-700" />
+        </HeroOrbit>
+
+        <HeroOrbit size={650} rotation={-5}>
+          <div className="size-2 rounded-full bg-orange-300/20"></div>
+        </HeroOrbit>
+
         <HeroOrbit size={710} rotation={144}>
           <SparkleIcon className="size-10 text-orange-300/20" />
         </HeroOrbit>
+
         <HeroOrbit size={720} rotation={85}>
           <div className="size-3 rounded-full bg-orange-300/20"></div>
         </HeroOrbit>
-        <HeroOrbit size={520} rotation={-41}>
-          <div className="size-2 rounded-full bg-orange-300/20"></div>
-        </HeroOrbit>
-        <HeroOrbit size={650} rotation={-5}>
-          <div className="size-2 rounded-full bg-orange-300/20"></div>
+
+        <HeroOrbit size={800} rotation={-72}>
+          <StarIcon className="size-20 text-orange-700" />
         </HeroOrbit>
       </div>
 
@@ -58,7 +69,10 @@ export const HeroSection = () => {
             alt="Software Developer"
           />
           <div className="px-4 py-1.5 inline-flex items-center gap-4 mt-2">
-            <div className="text-sm text-orange-700 font-medium">
+            <div className="bg-orange-600 size-2 rounded-full relative">
+              <div className="bg-orange-600 absolute inset-0 rounded-full animate-ping-large"></div>
+            </div>
+            <div className="text-sm text-white/70 font-medium">
               Web Developer
             </div>
           </div>
