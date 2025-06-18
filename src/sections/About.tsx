@@ -287,7 +287,9 @@ export const AboutSection = () => {
                 alt="map"
                 className="h-full w-full object-cover "
               />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full bg-gradient-to-r from-yellow-400/70 to-orange-600/70 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-900/30">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-900/10">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/70 to-orange-600/70 -z-20 animate-ping [animation-duration:2s]"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/70 to-orange-600/70 -z-10 "></div>
                 <Image
                   src={smileMemoji}
                   alt="Smile Memoji"
