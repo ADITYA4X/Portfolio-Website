@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import StarIcon from "@/assets/icons/star.svg";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
 import TypescriptIcon from "@/assets/icons/typescript.svg";
 import ReactIcon from "@/assets/icons/react.svg";
@@ -13,7 +12,6 @@ import MongoDBIcon from "@/assets/icons/mongodb.svg";
 import TailwindIcon from "@/assets/icons/tailwind-css.svg";
 import Github from "@/assets/icons/github.svg";
 import PostmanIcon from "@/assets/icons/postman.svg";
-import { TechIcon } from "@/components/TechIcon";
 import mapImage from "@/assets/images/map.png";
 import Image from "next/image";
 import smileMemoji from "@/assets/images/memoji-smile.png";
@@ -264,16 +262,20 @@ export const AboutSection = () => {
               application"
                 className=""
               />
-              <ToolboxItems items={toolboxItems} className="" />
               <ToolboxItems
                 items={toolboxItems}
-                className="mt-3"
-                itemsWrapperClassName="-translate-x-1/2"
+                className=""
+                itemsWrapperClassName="animate-move-left [animation-duration:30s]"
               />
               <ToolboxItems
                 items={toolboxItems}
                 className="mt-3"
-                itemsWrapperClassName="-translate-x-1/4"
+                itemsWrapperClassName="-translate-x-1/2 animate-move-right [animation-duration:20s]"
+              />
+              <ToolboxItems
+                items={toolboxItems}
+                className="mt-3"
+                itemsWrapperClassName=" animate-move-left [animation-duration:30s]"
               />
             </Card>
           </div>
