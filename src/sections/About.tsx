@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
@@ -17,6 +17,7 @@ import Image from "next/image";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
+import { motion } from "framer-motion";
 
 const qualificationData = [
   {
@@ -173,6 +174,8 @@ export const AboutSection = () => {
 
   const activeData = getData(qualificationData, activeTab);
 
+  const constraintRef = useRef(null);
+
   return (
     <div className="py-20 lg:py-28">
       <div className="container">
@@ -305,22 +308,30 @@ export const AboutSection = () => {
                 className="px-6 py-6"
               />
 
-              <div className="relative flex-1">
+              <div className="relative flex-1" ref={constraintRef}>
                 {projects.map((project) => (
-                  <a
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    rel="noopener noreferrer"
                     key={project.title}
-                    href={project.link}
                     className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-yellow-400/70 to-orange-600/70 text-white rounded-full py-1.5 absolute"
                     style={{
                       left: project.left,
                       top: project.top,
                     }}
+                    drag
+                    dragConstraints={constraintRef}
+                    dragElastic={0.2}
+                    dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
+                    whileDrag={{ scale: 1.1, rotate: 5 }}
                   >
                     <span>{project.emoji}</span>
                     <span className="font-medium text-stone-950">
                       {project.title}
                     </span>
-                  </a>
+                  </motion.div>
                 ))}
               </div>
             </Card>
