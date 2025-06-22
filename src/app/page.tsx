@@ -10,11 +10,27 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <HeroSection />
-      <ProjectsSection />
-      <TapeSection />
-      <AboutSection />
-      <ContactSection />
+
+      <section id="home" className="">
+        <HeroSection />
+      </section>
+
+      <section id="projects" className="min-h-screen">
+        <ProjectsSection />
+      </section>
+
+      <section>
+        <TapeSection />
+      </section>
+
+      <section id="about" className="">
+        <AboutSection />
+      </section>
+
+      <section id="contact" className="py-12 pb-24 scroll-mt-24">
+        <ContactSection />
+      </section>
+
       <Footer />
     </div>
   );

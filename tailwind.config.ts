@@ -21,6 +21,9 @@ const config: Config = {
       },
     },
     extend: {
+      scrollMargin: {
+        24: "6rem",
+      },
       fontFamily: {
         sans: "var(--font-sans)",
         serif: "var(--font-serif)",
