@@ -5,6 +5,7 @@ import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import CircleIcon from "@/assets/icons/circle.png";
 import { HeroOrbit } from "@/components/HeroOrbit";
+import { ArrowDown } from "lucide-react";
 
 export const HeroSection = () => {
   return (
@@ -143,12 +144,18 @@ export const HeroSection = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-          <button className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-8 h-10 hover:bg-white/20 transition">
+          <button className="relative z-0 inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-8 h-10 hover:bg-white/20 transition">
             <span className="font-semibold">Contact me 👨‍💻</span>
           </button>
-          <button className="inline-flex items-center gap-2 bg-white border border-black/15 text-stone-900 rounded-full px-4 h-10 hover:bg-white/60 transition">
-            <span className="font-semibold">Download CV ⬇️</span>
-          </button>
+
+          <a
+            href="/Resume.pdf"
+            download
+            className="relative z-10 group inline-flex items-center gap-2 bg-white border border-black/15 text-stone-900 rounded-full px-8 h-10 hover:bg-white/60 transition font-semibold"
+          >
+            <span>Download CV</span>
+            <ArrowDown className="w-4 h-4 transition duration-300 transform opacity-0 group-hover:opacity-100 group-hover:translate-y-1" />
+          </a>
         </div>
       </div>
     </div>
