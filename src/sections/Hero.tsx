@@ -6,6 +6,7 @@ import SparkleIcon from "@/assets/icons/sparkle.svg";
 import CircleIcon from "@/assets/icons/circle.png";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import { ArrowDown } from "lucide-react";
+import { Socials } from "@/components/Socials";
 
 export const HeroSection = () => {
   return (
@@ -156,6 +157,10 @@ export const HeroSection = () => {
             <span>Download CV</span>
             <ArrowDown className="w-4 h-4 transition duration-300 transform opacity-0 group-hover:opacity-100 group-hover:translate-y-1" />
           </a>
+        </div>
+
+        <div className="mt-12 flex justify-center items-center gap-4 ">
+          <Socials />
         </div>
       </div>
     </div>

@@ -44,10 +44,12 @@ export const Header = () => {
 
   return (
     <div className="flex justify-between items-center fixed top-5 w-full z-20">
-      <Link href="/" className="mt-[-2px] pl-3">
+      <Link href="/" className="mt-[-2px] pl-3 ">
         <h1 className="hidden md:block text-3xl md:text-3xl font-medium text-white/80 hover:text-white transition leading-none ">
           ADITYA{" "}
-          <span className="text-orange-600 text-4xl leading-none">.</span>
+          <span className="text-orange-600 text-4xl leading-none  transition">
+            .
+          </span>
         </h1>
       </Link>
 
