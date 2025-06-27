@@ -1,7 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
+import { X } from "lucide-react"; // Close icon
 
 export const ContactSection = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div id="contact" className="py-16 pt-12 lg:py-24 lg:pt-20">
       <div className="container">
@@ -9,10 +15,9 @@ export const ContactSection = () => {
           <div
             className="absolute inset-0 opacity-5 -z-10"
             style={{ backgroundImage: `url(${grainImage.src})` }}
-          >
-            {" "}
-          </div>
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
+          ></div>
+
+          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center justify-between w-full">
             <div>
               <h2 className="font-serif text-2xl md:text-3xl">
                 Let’s connect and create something meaningful
@@ -23,8 +28,12 @@ export const ContactSection = () => {
                 touch!
               </p>
             </div>
+
             <div>
-              <button className="text-white bg-stone-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900">
+              <button
+                onClick={() => setShowModal(true)}
+                className="text-white bg-stone-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900 hover:bg-stone-800 transition"
+              >
                 <span className="font-semibold">Contact Me</span>
                 <ArrowUpRightIcon className="size-4" />
               </button>
@@ -32,6 +41,89 @@ export const ContactSection = () => {
           </div>
         </div>
       </div>
+
+      {showModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 transition-opacity">
+          <div className="bg-white text-stone-900 rounded-2xl p-6 w-full max-w-md shadow-2xl relative animate-fade-in">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-black"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <h3 className="text-2xl font-semibold mb-6 text-center">
+              Send me a message
+            </h3>
+
+            <form
+              action="https://formspree.io/f/{my_form_id}"
+              method="POST"
+              className="space-y-6"
+            >
+              <div className="relative">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  required
+                  placeholder=" "
+                  className="peer w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-stone-900 placeholder-transparent"
+                />
+                <label
+                  htmlFor="name"
+                  className="absolute left-4 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-sm peer-focus:text-stone-900"
+                >
+                  Your Name
+                </label>
+              </div>
+
+              <div className="relative">
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  required
+                  placeholder=" "
+                  className="peer w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-stone-900 placeholder-transparent"
+                />
+                <label
+                  htmlFor="email"
+                  className="absolute left-4 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-sm peer-focus:text-stone-900"
+                >
+                  Your Email
+                </label>
+              </div>
+
+              <div className="relative">
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  required
+                  placeholder=" "
+                  className="peer w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-stone-900 placeholder-transparent resize-none"
+                />
+                <label
+                  htmlFor="message"
+                  className="absolute left-4 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-sm peer-focus:text-stone-900"
+                >
+                  Your Message
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-stone-900 text-white py-3 rounded-lg font-semibold hover:bg-stone-800 transition"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -35,7 +35,7 @@ const icons = [
   },
   {
     Icon: FaXTwitter,
-    href: "https://x.com",
+    href: "https://Twitter.com",
   },
   {
     Icon: LeetCodeIcon,
