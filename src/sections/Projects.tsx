@@ -67,7 +67,7 @@ export const ProjectsSection = () => {
           {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
+              className="px-[1px] py-[1px] pb-0 md:py-[1px] md:px-[1px] lg:py-[1px] lg:px-[1px] sticky"
               style={{
                 top: `calc(64px + ${projectIndex * 40}px)`,
               }}
@@ -98,13 +98,13 @@ export const ProjectsSection = () => {
                   <div className="flex flex-row items-center mt-8 gap-4">
                     <a href={project.weblink}>
                       <button className="inline-flex items-center gap-2 text-xs md:text-base bg-white/10 border border-white/15 rounded-full px-6 h-10 hover:bg-white/20 transition ">
-                        <span>Visit Website</span>
+                        <span>Website</span>
                         <ArrowUpRightIcon className="size-4" />
                       </button>
                     </a>
                     <a href={project.weblink}>
                       <button className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-6 h-10 hover:bg-white/20 transition text-xs md:text-base  ">
-                        <span>Source Code</span>
+                        <span>Github</span>
                         <ArrowUpRightIcon className="size-4" />
                       </button>
                     </a>
