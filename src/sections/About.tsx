@@ -12,12 +12,18 @@ import MongoDBIcon from "@/assets/icons/mongodb.svg";
 import TailwindIcon from "@/assets/icons/tailwind-css.svg";
 import Github from "@/assets/icons/github.svg";
 import PostmanIcon from "@/assets/icons/postman.svg";
+import NodeIcon from "@/assets/icons/nodejs.svg";
 import mapImage from "@/assets/images/map.png";
 import Image from "next/image";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
 import { motion } from "framer-motion";
+import prismaIcon from "@/assets/icons/prisma.svg";
+import postgresqlIcon from "@/assets/icons/postgresql.svg";
+import gitIcon from "@/assets/icons/git.svg";
+import turborepoIcon from "@/assets/icons/turborepo.svg";
+import dockerIcon from "@/assets/icons/docker.svg";
 
 const qualificationData = [
   {
@@ -65,7 +71,7 @@ const qualificationData = [
   },
 ];
 
-const toolboxItems = [
+const toolboxItems1 = [
   {
     title: "JavaScript",
     iconType: JavascriptIcon,
@@ -82,7 +88,13 @@ const toolboxItems = [
     title: "Next.js",
     iconType: NextIcon,
   },
+  {
+    title: "Tailwind CSS",
+    iconType: TailwindIcon,
+  },
+];
 
+const toolboxItems2 = [
   {
     title: "Express.js",
     iconType: ExpressIcon,
@@ -92,8 +104,23 @@ const toolboxItems = [
     iconType: MongoDBIcon,
   },
   {
-    title: "Tailwind CSS",
-    iconType: TailwindIcon,
+    title: "Node.js",
+    iconType: NodeIcon,
+  },
+  {
+    title: "Prisma",
+    iconType: prismaIcon,
+  },
+  {
+    title: "PostgreSQL",
+    iconType: postgresqlIcon,
+  },
+];
+
+const toolboxItems3 = [
+  {
+    title: "Git",
+    iconType: gitIcon,
   },
   {
     title: "GitHub",
@@ -102,6 +129,14 @@ const toolboxItems = [
   {
     title: "Postman",
     iconType: PostmanIcon,
+  },
+  {
+    title: "Turborepo",
+    iconType: turborepoIcon,
+  },
+  {
+    title: "Docker",
+    iconType: dockerIcon,
   },
 ];
 
@@ -266,25 +301,25 @@ export const AboutSection = () => {
                 className=""
               />
               <ToolboxItems
-                items={toolboxItems}
+                items={toolboxItems1}
                 className=""
-                itemsWrapperClassName="animate-move-left [animation-duration:30s]"
+                itemsWrapperClassName="animate-move-left [animation-duration:10s]"
               />
               <ToolboxItems
-                items={toolboxItems}
+                items={toolboxItems2}
                 className="mt-3"
-                itemsWrapperClassName="-translate-x-1/2 animate-move-right [animation-duration:20s]"
+                itemsWrapperClassName="-translate-x-1/2 animate-move-right [animation-duration:10s]"
               />
               <ToolboxItems
-                items={toolboxItems}
+                items={toolboxItems3}
                 className="mt-3"
-                itemsWrapperClassName=" animate-move-left [animation-duration:30s]"
+                itemsWrapperClassName=" animate-move-left [animation-duration:10s]"
               />
             </Card>
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-6 md:gap-6 lg:grid-cols-7">
-            <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-3">
+            <Card className="h-[380px] p-0 relative md:col-span-2 lg:col-span-3">
               <Image
                 src={mapImage}
                 alt="map"
@@ -301,7 +336,7 @@ export const AboutSection = () => {
               </div>
             </Card>
 
-            <Card className="h-[320px] p-0 flex flex-col md:col-span-4 lg:col-span-4">
+            <Card className="h-[380px] p-0 flex flex-col md:col-span-4 lg:col-span-4">
               <CardHeader
                 title="Other Projects"
                 description="Here are some of the projects I have worked on that are not listed in the Projects section."

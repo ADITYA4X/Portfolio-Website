@@ -67,11 +67,13 @@ export const ProjectsSection = () => {
           {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
-              className="px-[1px] py-[1px] pb-0 md:py-[1px] md:px-[1px] lg:py-[1px] lg:px-[1px] sticky"
+              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
               style={{
                 top: `calc(64px + ${projectIndex * 40}px)`,
               }}
             >
+              {/* <div className="absolute inset-0 z-0 rounded-3xl pointer-events-none before:absolute before:inset-0 before:rounded-3xl before:bg-[conic-gradient(at_top_left,_#dd9701,#df6902,_#f63a01)] before:animate-glow before:blur-xl before:opacity-40" /> */}
+
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
                   <div className="bg-gradient-to-r from-yellow-300 to-orange-600 inline-flex gap-2 font-bold uppercase tracking-widest text-transparent bg-clip-text">
@@ -98,13 +100,13 @@ export const ProjectsSection = () => {
                   <div className="flex flex-row items-center mt-8 gap-4">
                     <a href={project.weblink}>
                       <button className="inline-flex items-center gap-2 text-xs md:text-base bg-white/10 border border-white/15 rounded-full px-6 h-10 hover:bg-white/20 transition ">
-                        <span>Website</span>
+                        <span>Visit Website</span>
                         <ArrowUpRightIcon className="size-4" />
                       </button>
                     </a>
                     <a href={project.weblink}>
                       <button className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-6 h-10 hover:bg-white/20 transition text-xs md:text-base  ">
-                        <span>Github</span>
+                        <span>Source Code</span>
                         <ArrowUpRightIcon className="size-4" />
                       </button>
                     </a>
