@@ -32,10 +32,10 @@ export const ContactSection = () => {
             <div>
               <button
                 onClick={() => setShowModal(true)}
-                className="text-white bg-stone-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900 hover:bg-stone-800 transition"
+                className="group text-white bg-stone-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900 transition"
               >
                 <span className="font-semibold">Contact Me</span>
-                <ArrowUpRightIcon className="size-4" />
+                <ArrowUpRightIcon className="size-4 group-hover:animate-pulse-scale" />
               </button>
             </div>
           </div>
@@ -43,9 +43,14 @@ export const ContactSection = () => {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 transition-opacity">
-          <div className="bg-white text-stone-900 rounded-2xl p-6 w-full max-w-md shadow-2xl relative animate-fade-in">
-            {/* Close Button */}
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 transition-opacity px-2 sm:px-0"
+          onClick={() => setShowModal(false)}
+        >
+          <div
+            className="bg-white text-stone-900 rounded-2xl sm:p-6 p-4 w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl relative animate-fade-in"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 text-gray-400 hover:text-black"
@@ -59,22 +64,31 @@ export const ContactSection = () => {
             </h3>
 
             <form
-              action="https://formspree.io/f/{my_form_id}"
+              action="https://formsubmit.co/45426564ee6bdfdbf4bdf074aec08a93"
               method="POST"
-              className="space-y-6"
+              className="sm:space-y-6 space-y-4"
             >
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Contact Form Message"
+              />
+
               <div className="relative">
                 <input
                   type="text"
                   name="name"
                   id="name"
                   required
-                  placeholder=" "
-                  className="peer w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-stone-900 placeholder-transparent"
+                  placeholder=""
+                  className="peer w-full px-4 pt-6 pb-2 text-sm bg-white border border-gray-300 rounded-md focus:outline-none focus:border-stone-900"
                 />
                 <label
                   htmlFor="name"
-                  className="absolute left-4 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-sm peer-focus:text-stone-900"
+                  className="absolute left-4 top-2 text-gray-500 text-sm transition-all transform scale-100 origin-left 
+              peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:scale-100
+              peer-focus:top-1 peer-focus:text-sm peer-focus:text-stone-900 peer-focus:scale-90"
                 >
                   Your Name
                 </label>
@@ -86,12 +100,14 @@ export const ContactSection = () => {
                   type="email"
                   name="email"
                   required
-                  placeholder=" "
-                  className="peer w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-stone-900 placeholder-transparent"
+                  placeholder=""
+                  className="peer w-full px-4 pt-6 pb-2 text-sm bg-white border border-gray-300 rounded-md focus:outline-none focus:border-stone-900"
                 />
                 <label
                   htmlFor="email"
-                  className="absolute left-4 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-sm peer-focus:text-stone-900"
+                  className="absolute left-4 top-2 text-gray-500 text-sm transition-all transform scale-100 origin-left 
+               peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:scale-100
+               peer-focus:top-1 peer-focus:text-sm peer-focus:text-stone-900 peer-focus:scale-90"
                 >
                   Your Email
                 </label>
@@ -103,12 +119,14 @@ export const ContactSection = () => {
                   name="message"
                   rows={4}
                   required
-                  placeholder=" "
-                  className="peer w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-stone-900 placeholder-transparent resize-none"
+                  placeholder=""
+                  className="peer w-full px-4 pt-6 pb-2 text-sm bg-white border border-gray-300 rounded-md focus:outline-none focus:border-stone-900 resize-none"
                 />
                 <label
                   htmlFor="message"
-                  className="absolute left-4 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-sm peer-focus:text-stone-900"
+                  className="absolute left-4 top-2 text-gray-500 text-sm transition-all transform scale-100 origin-left 
+               peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:scale-100
+               peer-focus:top-1 peer-focus:text-sm peer-focus:text-stone-900 peer-focus:scale-90"
                 >
                   Your Message
                 </label>

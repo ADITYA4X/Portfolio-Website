@@ -149,7 +149,7 @@ const projects = [
     link: "https://github.com/ADITYA4X/Portfolio-Website",
   },
   {
-    title: "the-medium-blog",
+    title: "Medium-blog",
     emoji: "📑",
     left: "40%",
     top: "5%",
@@ -163,7 +163,7 @@ const projects = [
     link: "https://github.com/ADITYA4X/the-natours-project",
   },
   {
-    title: "Fast-React-Pizza-Co",
+    title: "Fast-React-Pizza",
     emoji: "🍕",
     left: "35%",
     top: "40%",

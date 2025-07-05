@@ -145,9 +145,12 @@ export const HeroSection = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-          <button className="relative z-0 inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-8 h-10 hover:bg-white/20 transition">
+          <a
+            href="#contact"
+            className="relative z-0 inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-8 h-10 hover:bg-white/20 transition"
+          >
             <span className="font-semibold">Contact me 👨‍💻</span>
-          </button>
+          </a>
 
           <a
             href="/Resume.pdf"

@@ -34,6 +34,7 @@ const config: Config = {
         "move-right": "move-right 1s linear infinite",
 
         glow: "glow 4s linear infinite",
+        'pulse-scale': 'pulseScale 0.6s ease-in-out',
       },
       keyframes: {
         "ping-large": {
@@ -66,6 +67,10 @@ const config: Config = {
           "100%": {
             transform: "rotate(360deg)",
           },
+        },
+        pulseScale: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.4)" },
         },
       },
     },
