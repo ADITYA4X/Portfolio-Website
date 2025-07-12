@@ -11,7 +11,7 @@ import { Socials } from "@/components/Socials";
 export const HeroSection = () => {
   return (
     <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)] pointer-events-none">
         <div
           className="absolute inset-0 -z-30 opacity-5 "
           style={{ backgroundImage: `url(${grainImage.src})` }}
@@ -73,7 +73,7 @@ export const HeroSection = () => {
           shouldSpin
           spinDuration="6s"
         >
-          <StarIcon className="size-12 text-orange-800" />
+          <StarIcon className="size-12 dark:text-orange-800 text-amber-500" />
         </HeroOrbit>
 
         <HeroOrbit
@@ -84,7 +84,7 @@ export const HeroSection = () => {
           shouldSpin
           spinDuration="6s"
         >
-          <StarIcon className="size-8 text-orange-700" />
+          <StarIcon className="size-8 dark:text-orange-700 text-amber-400" />
         </HeroOrbit>
 
         <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
@@ -114,7 +114,7 @@ export const HeroSection = () => {
           shouldSpin
           spinDuration="6s"
         >
-          <StarIcon className="size-20 text-orange-700" />
+          <StarIcon className="size-20 dark:text-orange-700 text-amber-400" />
         </HeroOrbit>
       </div>
 
@@ -129,33 +129,37 @@ export const HeroSection = () => {
             <div className="bg-orange-600 size-2 rounded-full relative">
               <div className="bg-orange-600 absolute inset-0 rounded-full animate-ping-large"></div>
             </div>
-            <div className="text-sm text-white/70 font-medium">
+            <div className="text-sm dark:text-white/70 text-stone-600 dark:font-medium font-semibold">
               Web Developer
             </div>
           </div>
         </div>
 
         <div className="max-w-lg mx-auto">
-          <h1 className="font-serif text-3xl md:text-5xl text-center tracking-wide">
+          <h1 className="font-serif text-3xl md:text-5xl text-center tracking-wide text-stone-800 dark:text-white">
             Hello, My name is <span className=" pl-2 ">ADITYA</span>{" "}
           </h1>
-          <p className="mt-4 text-center text-white/60 md:text-lg">
+          <p className="mt-4 text-center text-stone-600 dark:text-white/60 md:text-lg">
             &quot;Grounded in electrons, thriving in algorithms - I transformed
             my path from power to programming&quot;
           </p>
         </div>
+
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
           <a
             href="#contact"
-            className="relative z-0 inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-8 h-10 hover:bg-white/20 transition"
+            className="relative z-0 group inline-flex items-center gap-2 dark:bg-white/10 bg-white border dark:border-white/15 border-stone-300 rounded-full pl-9 pr-2 hover:pr-8 h-10 dark:hover:bg-white/20 hover:bg-stone-200 transition dark:text-white text-stone-800 hover:border-stone-600 duration-300"
           >
-            <span className="font-semibold">Contact me 👨‍💻</span>
+            <span className="font-semibold">Contact me</span>
+            <span className="w-4 h-4 pb-6 transition duration-100 transform opacity-0 group-hover:opacity-100 group-hover:translate-x-1">
+              👨‍💻
+            </span>
           </a>
 
           <a
             href="/Resume.pdf"
             download
-            className="relative z-10 group inline-flex items-center gap-2 bg-white border border-black/15 text-stone-900 rounded-full px-8 h-10 hover:bg-white/60 transition font-semibold"
+            className="relative z-10 group inline-flex items-center gap-2 dark:bg-white bg-stone-800 border border-black/15 dark:text-stone-900 text-white rounded-full pl-5 hover:pr-5 h-10 dark:hover:bg-white/60 duration-500 transition font-semibold"
           >
             <span>Download CV</span>
             <ArrowDown className="w-4 h-4 transition duration-300 transform opacity-0 group-hover:opacity-100 group-hover:translate-y-1" />

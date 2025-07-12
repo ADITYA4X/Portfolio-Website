@@ -221,23 +221,24 @@ export const AboutSection = () => {
         />
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-7 md:gap-6 lg:grid-cols-7">
-            <Card className="md:h-[380px] h-[420px] md:col-span-4 lg:col-span-4">
+            <Card className="md:h-[380px] h-[410px] md:col-span-4 lg:col-span-4">
               <CardHeader
-                title="Academic & Professional Highlights"
-                description=""
+                title="Professional Highlights"
+                description="A snapshot of my educational background and certifications that shaped my technical foundation"
               />
-              <div className="flex flex-col md:mt-0">
+
+              <div className="flex flex-col md:-mt-2 ">
                 {/* Tab Triggers */}
-                <div className="flex justify-center items-center -mt-4 ">
-                  <div className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
+                <div className="flex justify-center items-center mt-2 md:-mt-1 ">
+                  <div className="flex gap-1 border dark:border-white/15 border-stone-400 rounded-full bg-white/10 backdrop-blur ">
                     {["Education", "Certification"].map((tab) => (
                       <button
                         key={tab}
                         onClick={() => setActiveTab(tab)}
                         className={`px-4 py-1.5 text-sm rounded-full transition-all duration-300 nav-item ${
                           activeTab === tab
-                            ? "bg-white text-zinc-900 hover:bg-white/80"
-                            : "text-white/80 hover:text-white"
+                            ? "dark:bg-white bg-stone-800 dark:text-stone-900 text-white hover:bg-black"
+                            : "text-stone-700 dark:text-white/80 hover:text-black dark:hover:text-white"
                         }`}
                       >
                         {tab}
@@ -248,20 +249,20 @@ export const AboutSection = () => {
 
                 {/* Tab Content */}
 
-                <div className="flex flex-col gap-y-2 mt-6 overflow-y-auto md:max-h-[240px] max-h-[195px] pb-4 pl-1">
+                <div className="flex flex-col gap-y-2 sm:mt-6  overflow-y-auto md:max-h-[240px] max-h-[195px] pb-4 pl-1">
                   {activeTab === "Education"
                     ? activeData?.data.map((item, index) => {
                         const { degree, institution } = item;
                         return (
                           <div className="flex gap-x-6 group " key={index}>
-                            <div className="h-[64px] w-[1px] bg-border relative ml-2 mt-2 mb-2">
+                            <div className="h-[64px] w-[1px]  dark:bg-border relative ml-2 mt-2 mb-2">
                               <div className="w-[11px] h-[11px] rounded-full bg-orange-600 absolute -left-[5px] md:group-hover:translate-y-[34px] group-hover:translate-y-[64px] transition-all duration-500"></div>
                             </div>
                             <div>
-                              <div className="font-semibold text-md mb-2 text-white/80">
+                              <div className="font-semibold text-md mb-2 dark:text-white/80 text-stone-900">
                                 {degree},
                               </div>
-                              <div className="text-sm font-normal mb-4 text-white/60">
+                              <div className="text-sm font-normal mb-4 dark:text-white/60 text-stone-600">
                                 {institution}
                               </div>
                             </div>
@@ -272,17 +273,17 @@ export const AboutSection = () => {
                         const { course, platform } = item;
                         return (
                           <div className="flex gap-x-6 group mb-5" key={index}>
-                            <div className="h-[54px] w-[1px] bg-border relative ml-2 mt-2">
+                            <div className="h-[54px] w-[1px] dark:bg-border relative ml-2 mt-2">
                               <div className="w-[11px] h-[11px] rounded-full bg-orange-600 absolute -left-[5px] md:group-hover:translate-y-[44px] group-hover:translate-y-[54px] transition-all duration-500"></div>
                             </div>
                             <div>
                               <div
-                                className="font-semibold text-md mb-2 text-white/80
+                                className="font-semibold text-md mb-2 dark:text-white/80 text-stone-900
                 "
                               >
                                 {course},
                               </div>
-                              <div className="text-sm font-medium mb-4 text-white/60">
+                              <div className="text-sm font-medium mb-4 dark:text-white/60 text-stone-600">
                                 {platform}
                               </div>
                             </div>
@@ -293,7 +294,7 @@ export const AboutSection = () => {
               </div>
             </Card>
 
-            <Card className="md:h-[380px] h-[420px] md:col-span-3 lg:col-span-3 ">
+            <Card className="sm:h-[380px] h-[420px] md:col-span-3 lg:col-span-3 ">
               <CardHeader
                 title="My Toolbox"
                 description="Explore the technologies and tools I use to craft the beautiful
@@ -302,7 +303,7 @@ export const AboutSection = () => {
               />
               <ToolboxItems
                 items={toolboxItems1}
-                className=""
+                className="mt-3"
                 itemsWrapperClassName="animate-move-left [animation-duration:10s]"
               />
               <ToolboxItems

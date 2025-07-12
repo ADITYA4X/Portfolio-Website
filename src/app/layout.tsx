@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Calistoga } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
+import { ThemeProvider } from "./../providers/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,15 +27,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={twMerge(
-          inter.variable,
-          calistoga.variable,
-          "bg-stone-950 text-white antialiased font-sans"
-        )}
-      >
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={twMerge(inter.variable, calistoga.variable)}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={true}
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

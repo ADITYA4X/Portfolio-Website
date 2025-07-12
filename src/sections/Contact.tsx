@@ -60,7 +60,7 @@ export const ContactSection = () => {
             </button>
 
             <h3 className="text-2xl font-semibold mb-6 text-center">
-              Send me a message
+              Let’s Connect
             </h3>
 
             <form
