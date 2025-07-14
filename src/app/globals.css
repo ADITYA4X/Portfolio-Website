@@ -15,6 +15,18 @@
     @apply dark:border-red-300/5 dark:shadow-red-300/5;
   }
 
+  .react-activity-calendar__tooltip {
+    position: absolute;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 20 14.3% 4.1%;

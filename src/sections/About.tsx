@@ -222,6 +222,7 @@ export const AboutSection = () => {
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-7 md:gap-6 lg:grid-cols-7">
             <Card className="md:h-[380px] h-[410px] md:col-span-4 lg:col-span-4">
+              {/* <div className="absolute inset-0 z-0 rounded-3xl pointer-events-none before:absolute before:inset-0 before:rounded-3xl before:bg-[conic-gradient(at_top_left,_#dd9701,#df6902,_#f63a01)] before:animate-glow before:blur-xl before:opacity-40" /> */}
               <CardHeader
                 title="Professional Highlights"
                 description="A snapshot of my educational background and certifications that shaped my technical foundation"
