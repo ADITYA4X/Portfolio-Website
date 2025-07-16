@@ -74,12 +74,16 @@ const GitHubCalendarClient = () => {
 
   return (
     <div className="my-8">
-      <h2 className="text-xl font-bold mb-4 text-center dark:text-white text-zinc-800">
-        GitHub Contributions
+      <h2 className="font-serif text-2xl lg:text-3xl font-bold mb-4 text-center dark:text-white text-zinc-800">
+        GitHub Contributions - 2025
       </h2>
+      <p className=" md:py-0 md:px-10 text-sm lg:text-base max-w text-center dark:text-white/60 text-stone-600 mt-2">
+        A glimpse into my daily coding journey — commits, collaborations, and
+        open-source efforts.
+      </p>
 
       <div
-        className={`rounded-xl p-6 transition-all duration-300 ${
+        className={`rounded-xl p-6 mt-12 transition-all duration-300 ${
           isDark ? "bg-zinc-900" : "bg-white shadow"
         }`}
       >
