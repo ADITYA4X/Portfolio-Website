@@ -83,8 +83,7 @@ const GitHubCalendarClient = () => {
       />
 
       <TextGenerateEffect
-        words="A glimpse into my daily coding journey — commits, collaborations, and
-        open-source efforts."
+        words="A glimpse into my daily coding journey — personal projects in motion."
         className="text-center text-stone-500 dark:text-white/70 md:text-lg lg:text-xl mt-4 text-[16px] max-w-md mx-auto"
         duration={0.5}
         initialDelay={1.2}

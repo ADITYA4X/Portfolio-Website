@@ -1,3 +1,8 @@
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Loader from "@/components/Loader";
+
 import { Header } from "@/sections/Header";
 import { HeroSection } from "@/sections/Hero";
 import { ProjectsSection } from "@/sections/Projects";
@@ -15,37 +20,54 @@ const GitHubCalendar = dynamic(
 );
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <div>
-      <Header />
+    <>
+      <AnimatePresence>
+        {isLoading && <Loader onFinish={() => setIsLoading(false)} />}
+      </AnimatePresence>
 
-      <section id="home" className="">
-        <HeroSection />
-      </section>
+      {!isLoading && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <Header />
 
-      <section id="projects" className="min-h-screen">
-        <ProjectsSection />
-      </section>
+          <section id="home">
+            <HeroSection />
+          </section>
 
-      <section>
-        <TapeSection />
-      </section>
+          <section id="projects" className="min-h-screen">
+            <ProjectsSection />
+          </section>
 
-      <section id="about" className="">
-        <AboutSection />
-      </section>
+          <section>
+            <TapeSection />
+          </section>
 
-      <section id="github" className="px-4 py-12 md:py-20 flex justify-center">
-        <div className="w-full max-w-6xl">
-          <GitHubCalendar />
-        </div>
-      </section>
+          <section id="about">
+            <AboutSection />
+          </section>
 
-      <section id="contact" className="py-12 pb-24 scroll-mt-24">
-        <ContactSection />
-      </section>
+          <section
+            id="github"
+            className="px-4 py-12 md:py-20 flex justify-center"
+          >
+            <div className="w-full max-w-6xl">
+              <GitHubCalendar />
+            </div>
+          </section>
 
-      <Footer />
-    </div>
+          <section id="contact" className="py-12 pb-24 scroll-mt-24">
+            <ContactSection />
+          </section>
+
+          <Footer />
+        </motion.div>
+      )}
+    </>
   );
 }
