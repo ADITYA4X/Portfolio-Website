@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Loader from "@/components/Loader";
+import { LoaderFive } from "@/components/ui/loader";
 
 import { Header } from "@/sections/Header";
 import { HeroSection } from "@/sections/Hero";
@@ -22,10 +22,31 @@ const GitHubCalendar = dynamic(
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <AnimatePresence>
-        {isLoading && <Loader onFinish={() => setIsLoading(false)} />}
+        {isLoading && (
+          <motion.div
+            key="loader"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-zinc-900"
+          >
+            <LoaderFive
+              text={`"Code like the product matters... Build like the  outcomes doesn’t control you..."`}
+            />
+          </motion.div>
+        )}
       </AnimatePresence>
 
       {!isLoading && (

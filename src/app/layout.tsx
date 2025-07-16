@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className={twMerge(inter.variable, calistoga.variable)}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={true}
           disableTransitionOnChange
         >
