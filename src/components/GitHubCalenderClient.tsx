@@ -4,6 +4,7 @@ import ActivityCalendar from "react-activity-calendar";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Tooltip as MuiTooltip } from "@mui/material";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 interface Activity {
   date: string;
@@ -74,13 +75,20 @@ const GitHubCalendarClient = () => {
 
   return (
     <div className="my-8">
-      <h2 className="font-serif text-2xl lg:text-3xl font-bold mb-4 text-center dark:text-white text-zinc-800">
-        GitHub Contributions - 2025
-      </h2>
-      <p className=" md:py-0 md:px-10 text-sm lg:text-base max-w text-center dark:text-white/60 text-stone-600 mt-2">
-        A glimpse into my daily coding journey — commits, collaborations, and
-        open-source efforts.
-      </p>
+      <TextGenerateEffect
+        words="GitHub 2025 Contributions"
+        className="font-serif text-3xl md:text-5xl text-center text-stone-800 dark:text-white mt-6"
+        duration={0.5}
+        initialDelay={0}
+      />
+
+      <TextGenerateEffect
+        words="A glimpse into my daily coding journey — commits, collaborations, and
+        open-source efforts."
+        className="text-center text-stone-500 dark:text-white/70 md:text-lg lg:text-xl mt-4 text-[16px] max-w-md mx-auto"
+        duration={0.5}
+        initialDelay={1.2}
+      />
 
       <div
         className={`rounded-xl p-6 mt-12 transition-all duration-300 ${

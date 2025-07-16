@@ -7,6 +7,7 @@ import CircleIcon from "@/assets/icons/circle.png";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import { ArrowDown } from "lucide-react";
 import { Socials } from "@/components/Socials";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export const HeroSection = () => {
   return (
@@ -135,14 +136,27 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        <div className="max-w-lg mx-auto">
-          <h1 className="font-serif text-3xl md:text-5xl text-center tracking-wide text-stone-800 dark:text-white">
-            Hello, My name is <span className=" pl-2 ">ADITYA</span>{" "}
-          </h1>
-          <p className="mt-4 text-center text-stone-600 dark:text-white/60 md:text-lg">
-            &quot;Grounded in electrons, thriving in algorithms - I transformed
-            my path from power to programming&quot;
-          </p>
+        <div className="max-w-lg mx-auto text-center">
+          <TextGenerateEffect
+            words="Hello, my name is"
+            className="font-serif text-3xl md:text-5xl tracking-wide text-stone-800 dark:text-white"
+            duration={0.5}
+            initialDelay={0}
+          />
+          <TextGenerateEffect
+            words="ADITYA"
+            className="font-serif text-3xl md:text-5xl tracking-wide text-stone-800 dark:text-white"
+            duration={0.5}
+            initialDelay={1.2}
+          />
+
+          <TextGenerateEffect
+            words='"Grounded in electrons, thriving in algorithms - I transformed
+            my path from power to programming"'
+            className="mt-4 text-center text-[16px] text-stone-600 dark:text-white/60 md:text-lg"
+            duration={0.5}
+            initialDelay={1.6}
+          />
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">

@@ -86,27 +86,29 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
     >
       <div className="lg:grid lg:grid-cols-2 lg:gap-16">
         <div className="lg:pb-16">
-          <div className="dark:bg-gradient-to-r bg-gradient-to-r dark:from-yellow-300 from-amber-500 dark:to-red-600 to-orange-600 inline-flex gap-2 dark:font-bold font-extrabold uppercase tracking-widest text-transparent bg-clip-text">
-            <span>{project.subtitle}</span>
-            <span>&bull;</span>
-            <span>{project.year}</span>
-          </div>
-
-          <h3 className="font-serif text-2xl md:text-4xl mt-2 md:mt-5 text-stone-800 dark:text-white">
-            {project.title}
-            {project.variants && ` : ${activeVariant.name} App`}
-          </h3>
-
-          {project.variants && (
-            <div className="mt-3">
-              <button
-                onClick={() => setActiveIndex((prev) => (prev === 0 ? 1 : 0))}
-                className="mb-3 px-4 py-1 text-sm bg-stone-200 dark:bg-white/10 rounded-full transition hover:bg-stone-300 dark:hover:bg-white/20"
-              >
-                Switch to {project.variants[activeIndex === 0 ? 1 : 0].name}
-              </button>
+          <div className="text-center md:text-left">
+            <div className="dark:bg-gradient-to-r bg-gradient-to-r dark:from-yellow-300 from-amber-500 dark:to-red-600 to-orange-600 inline-flex gap-2 dark:font-bold font-extrabold uppercase tracking-widest text-transparent bg-clip-text justify-center md:justify-start">
+              <span>{project.subtitle}</span>
+              <span>&bull;</span>
+              <span>{project.year}</span>
             </div>
-          )}
+
+            <h3 className="font-serif text-2xl md:text-4xl mt-2 md:mt-5 text-stone-800 dark:text-white">
+              {project.title}
+              {project.variants && ` : ${activeVariant.name} App`}
+            </h3>
+
+            {project.variants && (
+              <div className="mt-3">
+                <button
+                  onClick={() => setActiveIndex((prev) => (prev === 0 ? 1 : 0))}
+                  className="mb-3 px-4 py-1 text-sm bg-stone-200 dark:bg-white/10 rounded-full transition hover:bg-stone-300 dark:hover:bg-white/20"
+                >
+                  Switch to {project.variants[activeIndex === 0 ? 1 : 0].name}
+                </button>
+              </div>
+            )}
+          </div>
 
           <hr className="border-t-2 dark:border-white/5 border-stone-200 mt-2 md:mt-3" />
           <ul className="flex flex-col gap-4 mt-4 md:mt-5">
@@ -123,7 +125,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
             )}
           </ul>
 
-          <div className="flex flex-row items-center mt-8 gap-4">
+          <div className="flex flex-row items-center justify-center md:justify-start mt-8 gap-4">
             <a href={activeVariant.weblink} target="_blank">
               <button className="inline-flex items-center gap-2 text-xs md:text-base dark:bg-white/10 bg-white border border-stone-300 hover:border-stone-700 hover:bg-stone-100 dark:border-white/15 rounded-full px-6 h-10 dark:hover:bg-white/20 transition">
                 <span>Website</span>

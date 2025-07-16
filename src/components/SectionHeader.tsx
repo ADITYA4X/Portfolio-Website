@@ -1,3 +1,4 @@
+import { TextGenerateEffect } from "./ui/text-generate-effect";
 export const SectionHeader = ({
   title,
   eyebrow,
@@ -14,12 +15,20 @@ export const SectionHeader = ({
           {eyebrow}
         </p>
       </div>
-      <h2 className="font-serif text-3xl text-stone-800 dark:text-white md:text-5xl  text-center mt-6">
-        {title}
-      </h2>
-      <p className="text-center text-stone-500 dark:text-white/70 md:text-lg lg:text-xl  mt-4 max-w-md mx-auto">
-        {description}
-      </p>
+
+      <TextGenerateEffect
+        words={title}
+        className="font-serif text-3xl md:text-5xl text-center text-stone-800 dark:text-white mt-6"
+        duration={0.5}
+        initialDelay={0}
+      />
+
+      <TextGenerateEffect
+        words={description}
+        className="text-center text-stone-500 dark:text-white/70 md:text-lg lg:text-xl mt-4 text-[16px] max-w-md mx-auto"
+        duration={0.5}
+        initialDelay={1.2}
+      />
     </>
   );
 };
