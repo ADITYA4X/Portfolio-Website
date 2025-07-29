@@ -1,49 +1,28 @@
-import { RiLinkedinFill, RiGithubFill, RiInstagramFill } from "react-icons/ri";
+import { RiLinkedinFill, RiGithubFill } from "react-icons/ri";
 import { FaXTwitter } from "react-icons/fa6";
+import { SiGeeksforgeeks, SiLeetcode } from "react-icons/si";
 import Link from "next/link";
-
-const LeetCodeIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 512 512"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="40"
-    className="w-[1.2em] h-[1.2em]"
-  >
-    <path
-      d="M189.5 148.3L263.1 74.7C287.6 50.2 324.3 47.5 351 72.2C375.5 94.9 378.7 133.1 357.2 158.2L197.3 318.1C175.8 339.6 140.6 339.6 119.1 318.1C97.6 296.6 97.6 261.4 119.1 239.9L275.6 83.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M322 321L375.1 374.1"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
 
 const icons = [
   {
     Icon: RiGithubFill,
-    href: "https://github.com",
+    href: "https://github.com/ADITYA4X",
   },
   {
     Icon: RiLinkedinFill,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/aditya-k-68323a105/",
   },
   {
     Icon: FaXTwitter,
-    href: "https://Twitter.com",
+    href: "https://x.com/adi_tya_4u",
   },
   {
-    Icon: LeetCodeIcon,
-    href: "https://leetcode.com",
+    Icon: SiLeetcode,
+    href: "https://leetcode.com/u/Aditya_K_04/",
   },
   {
-    Icon: RiInstagramFill,
-    href: "https://instagram.com",
+    Icon: SiGeeksforgeeks,
+    href: "https://www.geeksforgeeks.org/user/aditya4u/",
   },
 ];
 

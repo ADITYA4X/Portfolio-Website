@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import SplashToggleButton from "@/components/SplashToggleButton";
+import ThemeToggleButton from "@/components/ThemeToggleButton";
 
 const sections = ["home", "projects", "about", "contact"];
 
 export const Header = () => {
   const [activeSection, setActiveSection] = useState("home");
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -50,10 +50,6 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    setTheme(isDark ? "light" : "dark");
-  };
-
   return (
     <div className="flex justify-between items-center fixed top-5 w-full z-20">
       <Link href="/" className="mt-[-2px] pl-3">
@@ -88,13 +84,10 @@ export const Header = () => {
         ))}
       </nav>
       {mounted && (
-        <button
-          onClick={toggleTheme}
-          className="flex items-center gap-2 px-4 py-1.5 mt-[-2px] mr-3 rounded-full bg-gradient-to-r dark:from-yellow-300/20 dark:to-orange-400/10 from-yellow-300/100 to-orange-400/10 dark:text-white/90 text-stone-800 text-sm font-medium backdrop-blur dark:hover:from-yellow-300/40 dark:hover:to-orange-400/30 hover:from-yellow-300/40 hover:to-orange-300/100 transition-all"
-        >
-          <span className="text-base">{isDark ? "🌙" : "☀️"}</span>
-          <span className="hidden md:block">{isDark ? "Dark" : "Light"}</span>
-        </button>
+        <div className="flex items-center gap-1">
+          <ThemeToggleButton />
+          <SplashToggleButton />
+        </div>
       )}
     </div>
   );
