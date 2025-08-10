@@ -3,6 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowRightIcon, ArrowUpRightIcon } from "lucide-react";
+import MediumLandingPage from "@/assets/images/Medium.png";
+import OmnifoodLandingPage from "@/assets/images/Omnifood.png";
+import ForkifyLandingPage from "@/assets/images/forkify.png";
+import NatoursLandingPage from "@/assets/images/Natours.png";
+import FastPizzaLandingPage from "@/assets/images/FastPizza.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import Image from "next/image";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -53,7 +58,7 @@ const completedProjects = [
     completed: "Dec 2024",
     weblink: "https://the-medium-blog.netlify.app/signin",
     codelink: "https://github.com/ADITYA4X/MERN-PROJECTS/tree/main/medium-blog",
-    image: lightSaasLandingPage,
+    image: MediumLandingPage,
   },
   {
     title: "The-Natours",
@@ -74,9 +79,9 @@ const completedProjects = [
     github: "#",
     demo: "#",
     completed: "Sep 2024",
-    weblink: "https://youtu.be/7hi5zwO75yc",
+    weblink: "",
     codelink: "https://github.com/ADITYA4X/the-natours-project",
-    image: lightSaasLandingPage,
+    image: NatoursLandingPage,
   },
   {
     title: "Forkify Recipe App",
@@ -89,9 +94,9 @@ const completedProjects = [
     github: "#",
     demo: "#",
     completed: "Jun 2024",
-    weblink: "",
-    codelink: "",
-    image: lightSaasLandingPage,
+    weblink: "https://forkify-mw.vercel.app/",
+    codelink: "https://github.com/ADITYA4X/Forkify-Recipe-App",
+    image: ForkifyLandingPage,
   },
   {
     title: "Fast React Pizza",
@@ -105,8 +110,8 @@ const completedProjects = [
     demo: "#",
     completed: "Aug 2024",
     weblink: "",
-    codelink: "",
-    image: lightSaasLandingPage,
+    codelink: "https://github.com/ADITYA4X/Fast-React-Pizza-Co",
+    image: FastPizzaLandingPage,
   },
   {
     title: "Omnifood",
@@ -120,7 +125,7 @@ const completedProjects = [
     completed: "Oct 2023",
     weblink: "https://omnifood-adityak.netlify.app/",
     codelink: "",
-    image: lightSaasLandingPage,
+    image: OmnifoodLandingPage,
   },
 ];
 
@@ -133,9 +138,10 @@ const ProjectsPage = () => {
       : completedProjects.filter((proj) => proj.category === activeCategory);
 
   return (
-    <div className="container mx-auto px-4 py-20 space-y-24">
+    <div className="container mx-auto px-4 pb-20 space-y-24">
       {/* Header */}
       <div className="text-center ">
+        <div></div>
         <SectionHeader eyebrow="" title="" description="" />
         <SectionHeader
           eyebrow="Code & Craft Gallery"
@@ -241,18 +247,22 @@ const ProjectsPage = () => {
                 </div>
 
                 <div className="flex flex-row items-center justify-center md:justify-start mt-8 gap-4">
-                  <a href={project.weblink} target="_blank">
-                    <button className="inline-flex items-center gap-2 text-xs md:text-base dark:bg-white/10 bg-white border border-stone-300 hover:border-stone-700 hover:bg-stone-100 dark:border-white/15 rounded-full px-6 h-10 dark:hover:bg-white/20 transition">
-                      <span>Website</span>
-                      <ArrowUpRightIcon className="size-4" />
-                    </button>
-                  </a>
-                  <a href={project.codelink} target="_blank">
-                    <button className="inline-flex items-center gap-2 text-white dark:bg-white/10 bg-stone-900 border-black/15 border dark:border-white/15 rounded-full px-6 h-10 dark:hover:bg-white/20 hover:bg-stone-800 hover:border-white transition text-xs md:text-base">
-                      <span>GitHub</span>
-                      <ArrowUpRightIcon className="size-4" />
-                    </button>
-                  </a>
+                  {project.weblink && (
+                    <a href={project.weblink} target="_blank">
+                      <button className="inline-flex items-center gap-2 text-xs md:text-base dark:bg-white/10 bg-white border border-stone-300 hover:border-stone-700 hover:bg-stone-100 dark:border-white/15 rounded-full px-6 h-10 dark:hover:bg-white/20 transition">
+                        <span>Website</span>
+                        <ArrowUpRightIcon className="size-4" />
+                      </button>
+                    </a>
+                  )}
+                  {project.codelink && (
+                    <a href={project.codelink} target="_blank">
+                      <button className="inline-flex items-center gap-2 text-white dark:bg-white/10 bg-stone-900 border-black/15 border dark:border-white/15 rounded-full px-6 h-10 dark:hover:bg-white/20 hover:bg-stone-800 hover:border-white transition text-xs md:text-base">
+                        <span>GitHub</span>
+                        <ArrowUpRightIcon className="size-4" />
+                      </button>
+                    </a>
+                  )}
                 </div>
               </div>
 

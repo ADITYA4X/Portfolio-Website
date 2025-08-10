@@ -10,7 +10,7 @@ interface SplashContextType {
 const SplashContext = createContext<SplashContextType | null>(null);
 
 export const SplashProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isSplashEnabled, setIsSplashEnabled] = useState(true);
+  const [isSplashEnabled, setIsSplashEnabled] = useState(false);
 
   const toggleSplash = () => setIsSplashEnabled((prev) => !prev);
 

@@ -84,7 +84,7 @@ export const Header = () => {
         ))}
       </nav>
       {mounted && (
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 border-2 rounded-3xl">
           <ThemeToggleButton />
           <SplashToggleButton />
         </div>

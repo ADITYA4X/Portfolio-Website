@@ -5,6 +5,7 @@ import lightSaasLandingPage from "@/assets/images/landing-page-3 .png";
 import artxLandingPage from "@/assets/images/landing-page-4.png";
 import oasisBLandingPage from "@/assets/images/landing-page-1.png";
 import oasisMLandingPage from "@/assets/images/landing-page-2.png";
+import portfolioLandingPage from "@/assets/images/Portfolio.png";
 
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
@@ -24,18 +25,16 @@ const portfolioProjects = [
       {
         name: "Management",
         description: [
-          "Management App",
-          "Next.js, React, Supabase, NextAuth, Tailwind",
+          "React, Supabase, React Router, React Query",
           "Real-time data operations",
         ],
-        weblink: "https://the-wild-oasis-two-rust.vercel.app/",
+        weblink: "https://the-wild-oasis-two-rust.vercel.app",
         codelink: "https://github.com/ADITYA4X/The-Wild-Oasis",
         image: oasisMLandingPage,
       },
       {
         name: "Booking",
         description: [
-          "Booking App",
           "Next.js, React, Supabase, NextAuth, Tailwind",
           "Real-time data operations",
         ],
@@ -56,22 +55,37 @@ const portfolioProjects = [
       { title: "Next, Clerk , Upload Care, ShadCn, Neon Tech, Tailwind" },
       { title: "A responsive and modern UI " },
     ],
-    weblink: "https://github.com/ADITYA4X/Fuzzie-saas-auto-builder",
+    // weblink: "https://github.com/ADITYA4X/Fuzzie-saas-auto-builder",
     codelink: "https://github.com/ADITYA4X/Fuzzie-saas-auto-builder",
     image: lightSaasLandingPage,
   },
   {
     year: "2025",
-    title: "Art X",
+    title: "Art - X",
     subtitle: "Art Fair Platform",
     results: [
       { title: "A multi-vendor art fair platform " },
       { title: "React, Redux, Node, Express, MongoDB, Tailwind" },
       { title: "Easy navigation between vendors" },
     ],
-    weblink: "https://github.com/ADITYA4X/MERN-PROJECT/tree/main",
+    // weblink: "https://github.com/ADITYA4X/MERN-PROJECT/tree/main",
     codelink: "https://github.com/ADITYA4X/MERN-PROJECT/tree/main",
     image: artxLandingPage,
+  },
+  {
+    year: "2025",
+    title: "Personal Portfolio",
+    subtitle: "Portfolio Website",
+    results: [
+      {
+        title: "A portfolio website showcasing my work and skills",
+      },
+      { title: "Next, TypeScript ,ShadCn, Tailwind, Framer-motion" },
+      { title: "A responsive and modern UI " },
+    ],
+    // weblink: "https://github.com/ADITYA4X/Portfolio-Website",
+    codelink: "https://github.com/ADITYA4X/Portfolio-Website",
+    image: portfolioLandingPage,
   },
 ];
 
@@ -131,12 +145,14 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
           </ul>
 
           <div className="flex flex-row items-center justify-center md:justify-start mt-8 gap-4">
-            <a href={activeVariant.weblink} target="_blank">
-              <button className="inline-flex items-center gap-2 text-xs md:text-base dark:bg-white/10 bg-white border border-stone-300 hover:border-stone-700 hover:bg-stone-100 dark:border-white/15 rounded-full px-6 h-10 dark:hover:bg-white/20 transition">
-                <span>Website</span>
-                <ArrowUpRightIcon className="size-4" />
-              </button>
-            </a>
+            {activeVariant.weblink && (
+              <a href={activeVariant.weblink} target="_blank">
+                <button className="inline-flex items-center gap-2 text-xs md:text-base dark:bg-white/10 bg-white border border-stone-300 hover:border-stone-700 hover:bg-stone-100 dark:border-white/15 rounded-full px-6 h-10 dark:hover:bg-white/20 transition">
+                  <span>Website</span>
+                  <ArrowUpRightIcon className="size-4" />
+                </button>
+              </a>
+            )}
             <a href={activeVariant.codelink} target="_blank">
               <button className="inline-flex items-center gap-2 text-white dark:bg-white/10 bg-stone-900 border-black/15 border dark:border-white/15 rounded-full px-6 h-10 dark:hover:bg-white/20 hover:bg-stone-800 hover:border-white transition text-xs md:text-base">
                 <span>GitHub</span>
