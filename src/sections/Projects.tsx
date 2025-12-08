@@ -196,7 +196,7 @@ export const ProjectsSection = () => {
             target="_blank"
             className="group inline-flex items-center gap-[6px] text-xs md:text-base dark:bg-white/10 bg-white border border-stone-400 hover:border-stone-700 hover:bg-stone-100 dark:border-white/15 rounded-full px-6 h-10 dark:hover:bg-white/20 transition"
           >
-            <span>See all featured work</span>
+            <span>See all projects work</span>
             <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>

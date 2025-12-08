@@ -20,7 +20,7 @@ const currentlyBuilding = [
     title: "Helix AI",
     status: "Actively Building",
     description: "AI-powered genomic data analysis tool using EVO-2",
-    progress: 60,
+    progress: 90,
     tech: [
       "Next.js",
       "React.js",
@@ -139,13 +139,12 @@ const ProjectsPage = () => {
 
   return (
     <div className="container mx-auto px-4 pb-20 space-y-24">
-      {/* Header */}
       <div className="text-center ">
         <div></div>
         <SectionHeader eyebrow="" title="" description="" />
         <SectionHeader
           eyebrow="Code & Craft Gallery"
-          title="All Featured Work"
+          title="Personal Projects"
           description="Innovative digital experiences crafted with clean code, thoughtful
           design, and modern engineering standards."
         />
@@ -219,7 +218,9 @@ const ProjectsPage = () => {
           <Card
             key={project.title + index}
             className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
-            style={{ top: `calc(80px + ${index * 40}px)` }}
+            style={
+              { top: `calc(80px + ${index * 40}px)` } as React.CSSProperties
+            }
           >
             <div className="lg:grid lg:grid-cols-2 lg:gap-16">
               <div className="lg:pb-16">

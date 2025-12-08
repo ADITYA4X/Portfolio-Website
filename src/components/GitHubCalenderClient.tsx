@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Tooltip as MuiTooltip } from "@mui/material";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
+import { BackgroundGradient } from "./ui/background-gradient";
 
 interface Activity {
   date: string;
@@ -31,11 +32,15 @@ const GitHubCalendarClient = () => {
 
         const flat = json.contributions.flat();
 
-        const contributions = flat.map((c: any) => ({
-          date: c.date,
-          count: c.contributionCount,
-          level: mapLevel(c.contributionLevel),
-        }));
+        const currentYear = new Date().getFullYear();
+
+        const contributions = flat
+          .filter((c: any) => new Date(c.date).getFullYear() === currentYear)
+          .map((c: any) => ({
+            date: c.date,
+            count: c.contributionCount,
+            level: mapLevel(c.contributionLevel),
+          }));
 
         setData(contributions);
       } catch (err) {
@@ -84,59 +89,61 @@ const GitHubCalendarClient = () => {
 
       <TextGenerateEffect
         words="A glimpse into my daily coding journey — personal projects in motion."
-        className="text-center text-stone-500 dark:text-white/70 md:text-lg lg:text-xl mt-4 text-[16px] max-w-md mx-auto"
+        className="text-center text-stone-500 dark:text-white/70 md:text-lg lg:text-xl mt-4 text-[16px] max-w-md mx-auto mb-12"
         duration={0.5}
         initialDelay={1.2}
       />
 
-      <div
-        className={`rounded-xl p-6 mt-12 transition-all duration-300 ${
-          isDark ? "bg-zinc-900" : "bg-white shadow"
-        }`}
-      >
-        <ActivityCalendar
-          data={data}
-          renderBlock={(block, activity) => (
-            <MuiTooltip
-              title={`${activity.count} activities on ${activity.date}`}
-            >
-              {block}
-            </MuiTooltip>
-          )}
-          renderColorLegend={(block, level) => (
-            <MuiTooltip title={`Level: ${level}`}>{block}</MuiTooltip>
-          )}
-          blockSize={15}
-          blockMargin={5}
-          fontSize={14}
-          theme={{
-            light: ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"],
-            dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
-          }}
-          colorScheme={isDark ? "dark" : "light"}
-          labels={{
-            totalCount: "{{count}} contributions in the last year",
-            legend: { less: "Less", more: "More" },
-            months: [
-              "Jan",
-              "Feb",
-              "Mar",
-              "Apr",
-              "May",
-              "Jun",
-              "Jul",
-              "Aug",
-              "Sep",
-              "Oct",
-              "Nov",
-              "Dec",
-            ],
-            weekdays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-          }}
-          hideColorLegend={false}
-          showWeekdayLabels={true}
-        />
-      </div>
+      <BackgroundGradient>
+        <div
+          className={`rounded-3xl p-6  transition-all duration-300 ${
+            isDark ? "bg-zinc-900" : "bg-white shadow"
+          }`}
+        >
+          <ActivityCalendar
+            data={data}
+            renderBlock={(block, activity) => (
+              <MuiTooltip
+                title={`${activity.count} activities on ${activity.date}`}
+              >
+                {block}
+              </MuiTooltip>
+            )}
+            renderColorLegend={(block, level) => (
+              <MuiTooltip title={`Level: ${level}`}>{block}</MuiTooltip>
+            )}
+            blockSize={15}
+            blockMargin={5}
+            fontSize={14}
+            theme={{
+              light: ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"],
+              dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+            }}
+            colorScheme={isDark ? "dark" : "light"}
+            labels={{
+              totalCount: "{{count}} contributions in the last year",
+              legend: { less: "Less", more: "More" },
+              months: [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec",
+              ],
+              weekdays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+            }}
+            hideColorLegend={false}
+            showWeekdayLabels={true}
+          />
+        </div>
+      </BackgroundGradient>
     </div>
   );
 };
