@@ -22,7 +22,7 @@ import { motion } from "framer-motion";
 import prismaIcon from "@/assets/icons/prisma.svg";
 import postgresqlIcon from "@/assets/icons/postgresql.svg";
 import gitIcon from "@/assets/icons/git.svg";
-import turborepoIcon from "@/assets/icons/turborepo.svg";
+// import turborepoIcon from "@/assets/icons/turborepo.svg";
 import dockerIcon from "@/assets/icons/docker.svg";
 
 const qualificationData = [
@@ -130,10 +130,10 @@ const toolboxItems3 = [
     title: "Postman",
     iconType: PostmanIcon,
   },
-  {
-    title: "Turborepo",
-    iconType: turborepoIcon,
-  },
+  // {
+  //   title: "Turborepo",
+  //   iconType: turborepoIcon,
+  // },
   {
     title: "Docker",
     iconType: dockerIcon,
